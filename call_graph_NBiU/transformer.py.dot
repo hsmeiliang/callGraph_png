@@ -1,0 +1,65 @@
+digraph test {
+	graph [bb="0,0,405.71,284",
+		concentrate=true,
+		rankdir=LR,
+		ratio=0.7
+	];
+	node [label="\N",
+		shape=Mrecord
+	];
+	node1	 [height=0.51389,
+		label=__generate_sequence,
+		pos="108.71,128.5",
+		width=2.3611];
+	node2	 [height=0.51389,
+		label=__tens2sent,
+		pos="330.71,183.5",
+		width=1.4167];
+	node1 -> node2	 [pos="e,279.65,170.85 181.41,146.51 210.01,153.6 242.49,161.64 269.83,168.42"];
+	node7	 [height=0.51389,
+		label=decode,
+		pos="330.71,128.5",
+		width=0.94444];
+	node1 -> node7	 [pos="s,193.91,128.5 e,296.7,128.5 204.07,128.5 232.81,128.5 262.97,128.5 286.64,128.5"];
+	node9	 [height=0.51389,
+		label=init_decoder,
+		pos="330.71,73.5",
+		width=1.4722];
+	node1 -> node9	 [pos="e,277.58,86.665 181.41,110.49 209.21,103.6 240.68,95.806 267.53,89.154"];
+	node3	 [height=0.51389,
+		label=_run_forward_ml,
+		pos="330.71,18.5",
+		width=1.9167];
+	node4	 [color="/greens3/3",
+		fillcolor="/greens3/2",
+		height=0.51389,
+		label=count_decoder_parameters,
+		pos="108.71,265.5",
+		style=filled,
+		width=2.9444];
+	node6	 [height=0.51389,
+		label=count_parameters,
+		pos="330.71,238.5",
+		width=2.0417];
+	node4 -> node6	 [pos="e,257.02,247.46 214.84,252.59 225.65,251.28 236.53,249.96 247.05,248.68"];
+	node5	 [color="/greens3/3",
+		fillcolor="/greens3/2",
+		height=0.51389,
+		label=count_encoder_parameters,
+		pos="108.71,210.5",
+		style=filled,
+		width=2.9444];
+	node5 -> node6	 [pos="e,257.02,229.21 214.84,223.88 225.65,225.25 236.53,226.62 247.05,227.95"];
+	node6 -> node6	 [pos="e,370.62,256.53 290.81,256.53 284.03,266.19 297.33,275 330.71,275 351.58,275 364.6,271.56 369.78,266.62"];
+	node7 -> node1;
+	node8	 [color="/greens3/3",
+		fillcolor="/greens3/2",
+		height=0.51389,
+		label=forward,
+		pos="108.71,73.5",
+		style=filled,
+		width=1.0139];
+	node8 -> node3	 [pos="e,261.69,35.601 145.37,64.418 174.19,57.278 215.38,47.074 251.61,38.097"];
+	node8 -> node7	 [pos="e,296.55,120.04 145.37,82.582 184.17,92.194 245.39,107.36 286.75,117.61"];
+	node8 -> node9	 [pos="e,277.38,73.5 145.37,73.5 178.45,73.5 227.84,73.5 267.31,73.5"];
+}
